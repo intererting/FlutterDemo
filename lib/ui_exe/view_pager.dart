@@ -59,7 +59,10 @@ class _BannerViewTestState extends State<BannerViewTest> {
   }
 
   _bannerView(data) {
-    return CachedNetworkImage(imageUrl: data, fit: BoxFit.fill);
+    return Padding(
+      child: CachedNetworkImage(imageUrl: data, fit: BoxFit.fill),
+      padding: EdgeInsets.symmetric(horizontal: 8.0),
+    );
   }
 
   _buildBannerIndicator() {

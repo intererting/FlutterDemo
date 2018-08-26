@@ -38,7 +38,7 @@ class BannerView extends StatefulWidget {
 
 class BannerViewState extends State<BannerView> {
 //  double.infinity
-  final pageController = new PageController(initialPage: IntegerMax ~/ 2);
+  final pageController = new PageController(initialPage: IntegerMax ~/ 2,viewportFraction: 0.8);
   Timer timer;
 
   @override
