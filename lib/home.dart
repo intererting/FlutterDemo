@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants.dart';
 
 class Home extends StatelessWidget {
-  final _titles = <String>['ListView_1'];
+  final _titles = <String>['ListView_1', 'TestPage'];
   final _font = const TextStyle(fontSize: 18.0);
 
   @override
@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return _buildRow(context, index);
         },
-        itemCount: _titles.length,
+        itemCount: _titles.length * 2,
       ),
     );
   }
@@ -41,6 +41,10 @@ class Home extends StatelessWidget {
             switch (nowIndex) {
               case 0:
                 Navigator.of(context).pushNamed(Route_ListView_1);
+                break;
+              case 1:
+                Navigator.of(context).pushNamed(Route_Test_Page);
+                break;
             }
           },
         ),
