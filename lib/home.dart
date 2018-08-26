@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants.dart';
 
 class Home extends StatelessWidget {
-  final _titles = <String>['ListView_1', 'TestPage','ShoppingCar'];
+  final _titles = <String>['ListView_1', 'TestPage', 'ShoppingCar','BannerView'];
   final _font = const TextStyle(fontSize: 18.0);
 
   @override
@@ -47,6 +47,9 @@ class Home extends StatelessWidget {
                 break;
               case 2:
                 Navigator.of(context).pushNamed(Route_Shopping_Car);
+                break;
+              case 3:
+                Navigator.of(context).pushNamed(Route_View_Pager);
                 break;
             }
           },
