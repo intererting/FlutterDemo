@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/constants.dart';
 import 'package:flutter_demo/home.dart';
-import 'package:flutter_demo/ui_exe/test_page.dart';
+import 'package:flutter_demo/ui_exe/listview_1.dart';
 
 void main() => runApp(new MyApp());
 
@@ -10,12 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
-        primaryColor: Colors.black
-      ),
+      theme: new ThemeData(primaryColor: Colors.black),
       home: new Home(),
       routes: <String, WidgetBuilder>{
-        '/test': (BuildContext context) => new Exe1()
+        Route_ListView_1: (BuildContext context) => new ListView_1()
       },
     );
   }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/constants.dart';
 
 class Home extends StatelessWidget {
-  Home({Key key}) : super(key: key) {}
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -14,13 +13,14 @@ class Home extends StatelessWidget {
         children: <Widget>[
           new RaisedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/test');
+              Navigator.of(context).pushNamed(Route_ListView_1);
             },
             color: Colors.blue,
             child: new Container(
-              child: new Text('TestPage',style: new TextStyle(
-                color: Colors.white
-              ),),
+              child: new Text(
+                'ListView_1',
+                style: new TextStyle(color: Colors.white),
+              ),
             ),
           )
         ],
