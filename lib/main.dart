@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/home.dart';
+import 'package:flutter_demo/ui_exe/exe_1.dart';
 
 void main() => runApp(new MyApp());
 
@@ -9,17 +11,12 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(
-        primaryColor: Colors.black,
+        primaryColor: Colors.black
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
-          centerTitle: true,
-        ),
-        body: new Center(
-          child: new Text('Hello World'),
-        ),
-      ),
+      home: new Home(),
+      routes: <String, WidgetBuilder>{
+        '/exe1': (BuildContext context) => new Exe1()
+      },
     );
   }
 }
