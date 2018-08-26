@@ -39,17 +39,18 @@ class _RandomWordsState extends State<RandomWords> {
       padding: EdgeInsets.all(12.0),
 //      itemExtent: 100.0,
       itemBuilder: (BuildContext context, int index) {
-        if (index.isOdd) {
-          return new Divider(
-            height: 1.0,
-          );
-        }
         return _buildRow(index);
       },
     );
   }
 
   Widget _buildRow(int index) {
+    if (index.isOdd) {
+      return new Divider(
+        height: 1.0,
+      );
+    }
+
     final nowIndex = index ~/ 2;
     final _alraedySaved = _saved.contains(nowIndex);
 

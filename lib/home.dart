@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants.dart';
 
 class Home extends StatelessWidget {
+  final _titles = <String>['ListView_1'];
+  final _font = const TextStyle(fontSize: 18.0);
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -9,21 +12,38 @@ class Home extends StatelessWidget {
         title: new Text('Welcome to Flutter'),
         centerTitle: true,
       ),
-      body: new Column(
-        children: <Widget>[
-          new RaisedButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(Route_ListView_1);
-            },
-            color: Colors.blue,
-            child: new Container(
-              child: new Text(
-                'ListView_1',
-                style: new TextStyle(color: Colors.white),
-              ),
-            ),
-          )
-        ],
+      body: new ListView.builder(
+        itemBuilder: (BuildContext context, int index) {
+          return _buildRow(context, index);
+        },
+        itemCount: _titles.length,
+      ),
+    );
+  }
+
+  Widget _buildRow(BuildContext context, int index) {
+    if (index.isOdd) {
+      return new Divider(
+        height: 1.0,
+      );
+    }
+    final nowIndex = index ~/ 2;
+    return new ListTileTheme(
+      textColor: Colors.white,
+      child: new Container(
+        color: Colors.blue,
+        child: new ListTile(
+          title: new Text(
+            _titles[nowIndex],
+            style: _font,
+          ),
+          onTap: () {
+            switch (nowIndex) {
+              case 0:
+                Navigator.of(context).pushNamed(Route_ListView_1);
+            }
+          },
+        ),
       ),
     );
   }
