@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/home.dart';
-import 'package:flutter_demo/ui_exe/exe_1.dart';
+import 'package:flutter_demo/ui_exe/test_page.dart';
 
 void main() => runApp(new MyApp());
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       home: new Home(),
       routes: <String, WidgetBuilder>{
-        '/exe1': (BuildContext context) => new Exe1()
+        '/test': (BuildContext context) => new Exe1()
       },
     );
   }

@@ -11,7 +11,7 @@ class Exe1 extends StatelessWidget {
       ),
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text('Exe_1'),
+          title: new Text('TextPage'),
           centerTitle: true,
         ),
       ),

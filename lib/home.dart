@@ -14,11 +14,11 @@ class Home extends StatelessWidget {
         children: <Widget>[
           new RaisedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/exe1');
+              Navigator.of(context).pushNamed('/test');
             },
             color: Colors.blue,
             child: new Container(
-              child: new Text('exe1',style: new TextStyle(
+              child: new Text('TestPage',style: new TextStyle(
                 color: Colors.white
               ),),
             ),
