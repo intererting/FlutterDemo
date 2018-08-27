@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants.dart';
 import 'package:flutter_demo/home.dart';
+import 'package:flutter_demo/native/native_con.dart';
 import 'package:flutter_demo/ui_exe/listview_1.dart';
 import 'package:flutter_demo/ui_exe/shoping_car.dart';
 import 'package:flutter_demo/ui_exe/test_page.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         Route_ListView_1: (BuildContext context) => new ListView_1(),
         Route_Test_Page: (BuildContext context) => new TestPage(),
         Route_Shopping_Car: (BuildContext context) => new ShoppingList(),
-        Route_View_Pager: (BuildContext context) => new BannerViewTest()
+        Route_View_Pager: (BuildContext context) => new BannerViewTest(),
+        Route_Native: (BuildContext context) => new NativeTest(),
       },
     );
   }
