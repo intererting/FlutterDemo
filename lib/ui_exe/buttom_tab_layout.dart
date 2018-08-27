@@ -40,20 +40,40 @@ class _TabbedAppBarSampleState extends State<TabbedAppBarSample>
               ),
             ),
             Container(
-              color: Colors.red,
+              padding: EdgeInsets.only(top: 4.0, bottom: 4.0),
+              color: Colors.blue,
               child: new TabBar(
-                indicator: UnderlineTabIndicator(),
+                indicator: null,
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.white,
                 controller: _tabController,
+                labelStyle: TextStyle(color: Colors.black),
+                unselectedLabelStyle: TextStyle(color: Colors.white),
                 isScrollable: false,
-                tabs: choices.map((Choice choice) {
-                  return new MyTabs(tabController: _tabController,);
-                }).toList(),
+                tabs: _buildTabs(),
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  List<Widget> _buildTabs() {
+    return choices.map((Choice choice) {
+      return Column(
+        children: <Widget>[
+          Icon(choice.icon),
+          Padding(
+            padding: EdgeInsets.only(top: 3.0),
+            child: Text(
+              choice.title,
+              style: TextStyle(fontSize: 11.0),
+            ),
+          ),
+        ],
+      );
+    }).toList();
   }
 
   @override
@@ -101,36 +121,6 @@ class ChoiceCard extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class MyTabs extends StatelessWidget {
-  final TabController tabController;
-
-  MyTabs({Key key, @required this.tabController});
-
-  @override
-  Widget build(BuildContext context) {
-    return _buildTabs();
-  }
-
-  _buildTabs() {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: choices.map((Choice choice) {
-          bool selected = choice.index == tabController.index;
-          TextStyle textStyle =
-              TextStyle(color: selected ? Colors.red : Colors.white);
-          return Column(
-            children: <Widget>[
-              Text(
-                choice.title,
-                style: textStyle,
-              ),
-              Icon(choice.icon)
-            ],
-          );
-        }).toList());
   }
 }
 
