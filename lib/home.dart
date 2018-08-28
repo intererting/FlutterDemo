@@ -7,8 +7,9 @@ class Home extends StatelessWidget {
     'TestPage',
     'ShoppingCar',
     'BannerView',
-    'NativeCode',
     'SaveData'
+    'NativeCode',
+    'Route'
   ];
   final _font = const TextStyle(fontSize: 18.0);
 
@@ -63,6 +64,22 @@ class Home extends StatelessWidget {
                 break;
               case 5:
                 Navigator.of(context).pushNamed(Route_Save_Data);
+                break;
+              case 6:
+                Navigator.push(
+                    context,
+                    new PageRouteBuilder(pageBuilder:
+                        (BuildContext context, _, __) {
+                      return new ListView_1();
+                    }, transitionsBuilder:
+                        (___, Animation<double> animation, ____, Widget child) {
+                      return new SlideTransition(
+                        position: new Tween<Offset>(
+                                begin: Offset(1.0, 0.0), end: Offset.zero)
+                            .animate(animation),
+                        child: child,
+                      );
+                    }));
                 break;
             }
           },
