@@ -7,7 +7,8 @@ class Home extends StatelessWidget {
     'TestPage',
     'ShoppingCar',
     'BannerView',
-    'NativeCode'
+    'NativeCode',
+    'SaveData'
   ];
   final _font = const TextStyle(fontSize: 18.0);
 
@@ -59,6 +60,9 @@ class Home extends StatelessWidget {
                 break;
               case 4:
                 Navigator.of(context).pushNamed(Route_Native);
+                break;
+              case 5:
+                Navigator.of(context).pushNamed(Route_Save_Data);
                 break;
             }
           },
