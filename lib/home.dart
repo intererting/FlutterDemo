@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants.dart';
+import 'package:flutter_demo/ui_exe/listview_1.dart';
+import 'package:flutter_demo/utils.dart';
 
 class Home extends StatelessWidget {
   final _titles = <String>[
@@ -7,7 +9,8 @@ class Home extends StatelessWidget {
     'TestPage',
     'ShoppingCar',
     'BannerView',
-    'NativeCode'
+    'NativeCode',
+    'Route'
   ];
   final _font = const TextStyle(fontSize: 18.0);
 
@@ -59,6 +62,22 @@ class Home extends StatelessWidget {
                 break;
               case 4:
                 Navigator.of(context).pushNamed(Route_Native);
+                break;
+              case 5:
+                Navigator.push(
+                    context,
+                    new PageRouteBuilder(pageBuilder:
+                        (BuildContext context, _, __) {
+                      return new ListView_1();
+                    }, transitionsBuilder:
+                        (___, Animation<double> animation, ____, Widget child) {
+                      return new SlideTransition(
+                        position: new Tween<Offset>(
+                                begin: Offset(1.0, 0.0), end: Offset.zero)
+                            .animate(animation),
+                        child: child,
+                      );
+                    }));
                 break;
             }
           },
